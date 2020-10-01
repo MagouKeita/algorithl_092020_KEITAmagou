@@ -48,7 +48,7 @@ class FibonacciHeap(Heap):
 
    # L'implémentation est décrite en anglais : https://en.wikipedia.org/wiki/Fibonacci_heap#Implementation_of_operations
    # et en français : https://fr.wikipedia.org/wiki/Tas_de_Fibonacci#Implémentation_des_opérations
-    """
+    
 
 #first heap (premiere arbre)
 
@@ -77,7 +77,7 @@ min_node= None
 total_nodes=0
 
     def insert(self, value: int) -> None:
-        insert_a_node=self.node(clef,value)
+        insert_a_node=self.node(value)
         insert_a_node.left=insert_a_node
         insert_a_node.right= insert_a_node
 
@@ -88,23 +88,48 @@ total_nodes=0
             insert_a_note.left=self.root_node
             self.root_node.right +self.root_node.left=insert_a_node
         
-        if self.min_node=None
+        if self.min_node=None:
             self.min_node= insert_a_node
-    def find_min(self) -> int:
+
+        if insert_a_node<self.min_node.value:
+            self.min_node=insert_a_node
+        
+        sel.total_nodes +=1
+        return insert_a_node
+
+   def find_min(self) -> int:
         """
      Retourne la valeur minimum dans l'arbre
         """
-        pass
+        return self.min_node.value
 
     def delete_min(self) -> int:
-        """
+       min= self.min_node
       Supprime et retourne la valeur minimum dans l'arbre
-        """
-        pass
+        if self.root_node = None:
+            self.root_node = min.child
+        else:
+            min.right = self.root_node.right
+            min.left = self.root_node
+            self.root_node.right.left = min.child
+            self.root_node.right = min.child
+        
 
     def merge(self, fibonnaci_heap: Heap) -> None:
-        """
-      Fusionne deux arbres
-        """
-        pass
+        
+        Fibh = FibonacciHeap()
+        Fibh.root_node, Fibh.min_node = self.root_node, self.min_node
+       
+        last = fibonnaci_heap.root_node.left
+        fibonnaci_heap.root_node.left = FileExistsError.root_node.left
+       
+        Fibh.root_node.left.right = fibonnaci_heap.root_node
+        Fibh.root_node.left = last
+        Fibh.root_node.left.right = Fibh.root_node
+
+        if fibonnaci_heap.min_node.value < Fibh.min_node.value:
+            Fibh.min_node = fibonnaci_heap.min_node
+        Fibh.total_nodes = self.total_nodes + fibonnaci_heap.total_nodes
+        return Fibh
+        
 
