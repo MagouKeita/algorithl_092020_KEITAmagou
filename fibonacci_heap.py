@@ -50,20 +50,46 @@ class FibonacciHeap(Heap):
    # et en français : https://fr.wikipedia.org/wiki/Tas_de_Fibonacci#Implémentation_des_opérations
     """
 
+#first heap (premiere arbre)
 
-def fib(n):
-    if n >= 1
-        return n
-    else:
-        return fib(n-1) + fib(n-2)
-     print fib(n)
+fib_heap= FibonacciHeap()
+fib_heap.insert(0)
+fib_heap.insert(2)
+fib_heap.insert(4)
+fib_heap.insert(6)
+
+#second heap (deuxieme arbre)
+
+fib2_heap= FibonacciHeap()
+fib2_heap.insert(1)
+fib2_heap.insert(3)
+fib2_heap.insert(5)
+fib2_heap.insert(7)
+
+class node:
+    def _init_(self,value,clef):
+        self.value = value
+        self.parents= self.children = None
+        self.left= self.right= None
+        self.clef= clef
+root_node= None
+min_node= None
+total_nodes=0
 
     def insert(self, value: int) -> None:
-        """
-      #  Ajoute une valeur dans l'arbre
-    
-        pass
+        insert_a_node=self.node(clef,value)
+        insert_a_node.left=insert_a_node
+        insert_a_node.right= insert_a_node
 
+        if self.root_node=None
+            self.root_node=insert_a_node
+        else:
+            insert_a_note.right=self.root_node.right
+            insert_a_note.left=self.root_node
+            self.root_node.right +self.root_node.left=insert_a_node
+        
+        if self.min_node=None
+            self.min_node= insert_a_node
     def find_min(self) -> int:
         """
      Retourne la valeur minimum dans l'arbre
@@ -82,8 +108,3 @@ def fib(n):
         """
         pass
 
- heap = FibonacciHeap()
- heap.insert(42)
- heap.find_min()
-
-print(heap)
